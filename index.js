@@ -75,7 +75,8 @@ app.get('/cart/total-quantity', (req, res) => {
 function totalPrice(cart) {
   let sum = 0;
   for (let i = 0; i < cart.length; i++) {
-    sum += cart[i].price;
+    let prod = cart[i].price * cart[i].quantity;
+    sum += prod;
   }
   return sum;
 }
